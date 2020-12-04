@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+$device-desktop: 980px;
+$device-tablet : 979px;
+$device-sp: 640px; 
+
+
+/* タブレット */
+@mixin device-tablet {
+  @media (max-width: ($device-tablet)) {
+    @content;
+  }
+}
+
+/* スマホ */
+@mixin device-sp {
+  @media (max-width: ($device-sp)) {
+    @content;
+  }
+}
+
+/* デスクトップ */
+@mixin device-desktop {
+  @media (min-width: ($device-desktop)) {
+    @content;
+  }
+}
+
+
+
+
+
+/*
+角丸r指定
+ex) @include radius-func(5px);
+*/
+
+@mixin radius-func($r) {
+	border-radius:$r;
+	-moz-border-radius:$r;
+	-webkit-border-radius: $r;
+}
+
+
+
+

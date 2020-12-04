@@ -1,0 +1,82 @@
+@charset "UTF-8";
+@import "common_mixin.scss";
+
+
+	.contents-unit-width {
+		/* コンテンツ幅指定 */
+		@include contents-unit-width(900px);
+	}
+	
+
+	.device-test {
+		/* デバイスの指定切り替えの例 */
+		@include device-desktop{
+			background-color: #FF0;
+		}
+
+		@include device-tablet{
+			background-color: #0F0;
+		}
+
+		@include device-sp{
+			background-color: #00F;
+		}
+		
+	}
+
+
+
+		/* インデントリストテキスト例 */
+		.listtx {
+			@include listtext(2rem);
+		}
+		
+		.marker {
+			font-size: 1.5rem;
+			line-height: 150%;
+			@include markerline(200, 0, 250, .6 );
+		
+		}
+
+	.block2 {
+		position: relative;
+		width: 100%;
+		height: 800px;
+
+		/* デバイス幅により背景色変える例 */
+		@include device-desktop{
+			background-color: #aa0;
+		}
+
+		@include device-tablet{
+			background-color: #eef;
+		}
+
+		@include device-sp{
+			background-color: #123123;
+		}
+		
+		
+
+		color: #FFFFFF;
+		@include boxgradient(145deg, #f08037, #FF66dd );
+		font-size: 2rem;
+	}
+	
+	.block3 {
+	
+		/* 疑似要素アイコン */
+		.icontest {
+			display: block;
+			@include dispicon("../koto.png", 150px, 100px, 0px, top );
+			
+			padding-left: 150px;
+			padding-top: 50px;
+		}
+	}
+	
+	
+	.imgtest {
+		/* 要素に中央寄せの例 */
+		@include center(xy);
+	}

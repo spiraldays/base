@@ -1,0 +1,250 @@
+@charset "UTF-8";
+/*=========================================================================
+CSS reset
+--------------------------------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*=========================================================================
+デバイス定義
+--------------------------------------------------------------------------*/
+/* デスクトップ */
+/* タブレット */
+/* スマホ */
+/* デスクトップで非表示 */
+@media (min-width: 980px) {
+  .pc-none {
+    display: none;
+  }
+
+  .tablet-none {
+    display: block;
+  }
+
+  .sp-none {
+    display: block;
+  }
+}
+/* タブレットで非表示 */
+@media (max-width: 979px) {
+  .pc-none {
+    display: none;
+  }
+
+  .tablet-none {
+    display: none;
+  }
+
+  .sp-none {
+    display: block;
+  }
+}
+/* スマホで非表示 */
+@media (max-width: 640px) {
+  .pc-none {
+    display: block;
+  }
+
+  .tablet-none {
+    display: none;
+  }
+
+  .sp-none {
+    display: none;
+  }
+}
+/*=========================================================================
+@mixin contents-unit-width()
+コンテンツ幅指定
+
+ex) @include contents-unit-width(1000px);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin radius-func()
+角丸r指定
+
+ex) @include radius-func(5px);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin flexbox()
+Flex指定
+
+ex) @include flexbox(space-between);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin opacity()
+透明度指定
+
+ex) @include opacity(0.8);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin listtext()
+折返しリストテキスト対策
+
+・テキストテキストテキストテキ
+　ストテキストテキストテキストテキ
+
+ex) @include listtext(1rem);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin center()
+要素に対して中央寄せ
+
+親要素にrelativeしておくこと。
+
+ex) @include center(xy);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin boxgradient()
+ボックスグラデーション
+
+ex) @include boxgradient(135deg, #f08037, #f13f79 );
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin dispicon()
+ボックスグラデーション
+
+ex) @include dispicon(135deg, 150px, 100px, left, 50% );
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin markerline()
+テキストマーカーライン
+
+ex) @include markerline(255, 255, 30, .8 );
+--------------------------------------------------------------------------*/
+.contents-unit-width {
+  /* コンテンツ幅指定 */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.device-test {
+  /* デバイスの指定切り替えの例 */
+}
+@media (min-width: 980px) {
+  .device-test {
+    background-color: #FF0;
+  }
+}
+@media (max-width: 979px) {
+  .device-test {
+    background-color: #0F0;
+  }
+}
+@media (max-width: 640px) {
+  .device-test {
+    background-color: #00F;
+  }
+}
+
+/* インデントリストテキスト例 */
+.listtx {
+  padding-left: 2rem;
+  text-indent: -2rem;
+}
+
+.marker {
+  font-size: 1.5rem;
+  line-height: 150%;
+  background: linear-gradient(transparent 65%, rgba(200, 0, 250, 0.6) 0%);
+  display: inline;
+}
+
+.block2 {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  /* デバイス幅により背景色変える例 */
+  color: #FFFFFF;
+  background: -webkit-linear-gradient(145deg, #f08037 0%, #FF66dd 70%) no-repeat;
+  background: linear-gradient(145deg, #f08037 0%, #FF66dd 70%) no-repeat;
+  font-size: 2rem;
+}
+@media (min-width: 980px) {
+  .block2 {
+    background-color: #aa0;
+  }
+}
+@media (max-width: 979px) {
+  .block2 {
+    background-color: #eef;
+  }
+}
+@media (max-width: 640px) {
+  .block2 {
+    background-color: #123123;
+  }
+}
+
+.block3 {
+  /* 疑似要素アイコン */
+}
+.block3 .icontest {
+  display: block;
+  background: url("../koto.png") no-repeat 0px top;
+  background-size: 150px 100px;
+  width: 150px;
+  height: 100px;
+  padding-left: 150px;
+  padding-top: 50px;
+}
+
+.imgtest {
+  /* 要素に中央寄せの例 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
